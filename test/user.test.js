@@ -3,6 +3,7 @@ const request = require("supertest");
 const mongoose = require("mongoose");
 const app = require("../src/index"); // Import the Express app
 require("dotenv").config();
+const User = require("../src/models/user.model");
 
 let token; // Will hold the authentication token after login/registration
 let userId; // Will store the user ID after registration
