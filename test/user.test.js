@@ -1,7 +1,7 @@
 const request = require("supertest");
 const mongoose = require("mongoose");
-const app = require("../index"); // Assuming index.js exports your app
-const User = require("../models/user.model");
+const app = require("../src/index"); // Assuming index.js exports your app
+const User = require("../src/models/user.model");
 
 let token;
 let userId;
