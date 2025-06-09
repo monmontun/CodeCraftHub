@@ -1,5 +1,6 @@
 const userService = require("../services/user.service");
 
+// Register a user
 exports.register = async (req, res) => {
   try {
     const result = await userService.registerUser(req.body);
@@ -9,6 +10,7 @@ exports.register = async (req, res) => {
   }
 };
 
+// Login user
 exports.login = async (req, res) => {
   try {
     const result = await userService.loginUser(req.body);
@@ -18,6 +20,7 @@ exports.login = async (req, res) => {
   }
 };
 
+// Get current user's profile
 exports.getProfile = async (req, res) => {
   try {
     const user = await userService.getUserProfile(req.user._id);
@@ -27,15 +30,17 @@ exports.getProfile = async (req, res) => {
   }
 };
 
+// Update profile
 exports.updateProfile = async (req, res) => {
   try {
-    const user = await userService.updateUserProfile(req.params.username, req.body);
+    const user = await userService.updateUserProfile(req.user._id, req.body);
     res.status(200).json({ user });
   } catch (err) {
     res.status(400).json({ error: err.message });
   }
 };
 
+// Admin: get all users
 exports.getAllUsers = async (req, res) => {
   try {
     const users = await userService.getAllUsers();
@@ -45,6 +50,7 @@ exports.getAllUsers = async (req, res) => {
   }
 };
 
+// Admin: delete user
 exports.deleteUser = async (req, res) => {
   try {
     await userService.deleteUser(req.params.id);

@@ -1,2 +1,17 @@
+# Node modules
 node_modules/
+
+# Environment variables
 .env
+
+# Logs
+logs/
+*.log
+npm-debug.log*
+
+# Docker volumes
+mongo-data/
+
+# OS/System files
+.DS_Store
+Thumbs.db
