@@ -38,14 +38,14 @@ This is a **User Management microservice** built with **Node.js**, **Express**, 
       Edit .env for local and docker-compose.yml for production-safe secrets.
 
 ## 🔐 API Endpoints
-### Public
-      POST /users/register – Register a new user
-      POST /users/login – Authenticate a user
-
-### Protected (Requires JWT)
-      GET /users/me – Get current user's profile
-      PUT /users/:username – Update user profile
-      DELETE /users/:username – Delete a user
+| Method | Endpoint           | Description                 | Auth Required |
+| ------ | ------------------ | --------------------------- | ------------- |
+| POST   | `/users/register`  | Register new user           | ❌             |
+| POST   | `/users/login`     | Login and receive JWT token | ❌             |
+| GET    | `/users`           | Get all users               | ✅             |
+| GET    | `/users/me`        | Get current user info       | ✅             |
+| PUT    | `/users/:userid` | Update user by userid     | ✅             |
+| DELETE | `/users/:userid` | Delete user by userid     | ✅             |
 
 ## 🧪 API Testing with cURL
 ### Register
