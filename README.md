@@ -25,16 +25,16 @@ This is a **User Management microservice** built with **Node.js**, **Express**, 
 ### Create your JWT secret key
       node -e "console.log(require('crypto').randomBytes(64).toString('hex'))"
 ### Create .env file
-      PORT=5000
+      PORT=3000
       MONGODB_URI=mongodb://localhost:27017/userdb
       JWT_SECRET=your_jwt_secret
 ### Start the Server
       npm start
 
 ## 🐳 Docker Setup
-1. Build and Run with Docker Compose
+### Build and Run with Docker Compose
       docker-compose up --build
-2. Environment Variables
+### Environment Variables
       Edit .env for local and docker-compose.yml for production-safe secrets.
 
 ## 🔐 API Endpoints
@@ -49,20 +49,20 @@ This is a **User Management microservice** built with **Node.js**, **Express**, 
 
 ## 🧪 API Testing with cURL
 ### Register
-      curl -X POST http://localhost:5000/users/register \
+      curl -X POST http://localhost:3000/users/register \
         -H "Content-Type: application/json" \
         -d '{"username":"alice123","email":"alice@example.com","password":"SecurePass123"}'
 
 ### Login
-      curl -X POST http://localhost:5000/users/login \
+      curl -X POST http://localhost:3000/users/login \
         -H "Content-Type: application/json" \
         -d '{"email":"alice@example.com","password":"SecurePass123"}'
 
-## Get Profile
-      curl -X GET http://localhost:5000/users/me \
+### Get Profile
+      curl -X GET http://localhost:3000/users/me \
         -H "Authorization: Bearer <your_jwt_token>"
 
-## 🧪 Running Tests
+### 🧪 Running Tests
       npm test
       ##Tests are written using Jest and Supertest.
 
