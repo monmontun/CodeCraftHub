@@ -92,9 +92,3 @@ Tests are written using Jest and Supertest.
 - Never commit .env files or sensitive keys to GitHub.
 - Use .gitignore to exclude them.
 - Inject secrets via Docker, CI/CD environment configs, or vault services in production.
-
-## 📝 License
-      MIT License
-
-## 👥 Author
-      Aye Mon Tun
