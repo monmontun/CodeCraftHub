@@ -84,11 +84,14 @@ Tests are written using Jest and Supertest.
       -H "Authorization: Bearer YOUR_JWT_TOKEN"
 
 ## 📦 Docker Compose Overview
-      Dockerfile builds the Node.js application.
-      MongoDB is run as a service inside Docker.
-      Environment variables are injected via .env file or docker-compose environment fields.
+ - Dockerfile builds the Node.js application.
+ - MongoDB is run as a service inside Docker.
+ - Environment variables are injected via .env file or docker-compose environment fields.
 
 ## 🔐 Security Notes
 - Never commit .env files or sensitive keys to GitHub.
 - Use .gitignore to exclude them.
 - Inject secrets via Docker, CI/CD environment configs, or vault services in production.
+
+## Contributor
+Aye Mon Tun
